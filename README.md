@@ -1,5 +1,3 @@
-# HeadPhone-Amplifier
-
 
 ## Highpass filter
 
@@ -21,28 +19,19 @@ $R=47k\Omega$
 $C=1.8\mu F$
 $f_{C}=1.88Hz$
 
-### Getting $V_{out}$
-
+### Angular Frequency and Reactance
 $\omega =2\pi f$
 $X_{c}=\frac{1}{\omega C}$
-<br>
-$$V_{out}=V_{in}*\frac{R}{\sqrt{ X_{c}^2+R^2 }}$$
-
-### Transfer function
+### Output Voltage Formula
+$V_{out}=V_{in}*\frac{R}{\sqrt{ X_{c}^2+R^2 }}$
+### Impedance of the Capacitor
 
 $Z_{c}=\frac{1}{j\omega C}$
-<br>
-$$V_{out}=V_{in}*\frac{R}{R+\frac{1}{J\omega C}}$$
-**Simplifying**
-$$
-V_{out}=V_{in}*\frac{R}{R\left( 1+\frac{1}{j\omega C} \right)}=V_{in}*\frac{R}{1+\frac{1}{j\omega C}}=V_{in}*\frac{j\omega RC}{1+j\omega RC}
-$$
-**Transfer function**
-$$
-H(j\omega)=\frac{V_{out}}{V_{in}}=\frac{j\omega RC}{1+j\omega RC}\implies H(j\omega)=\frac{j\omega RC}{1+j\omega RC}
-$$
+### Voltage Transfer Equation
+$V_{out}=V_{in}*\frac{R}{R+\frac{1}{J\omega C}}$
+### Simplifying the Expression
+$V_{out}=V_{in}*\frac{R}{R\left( 1+\frac{1}{j\omega C} \right)}=V_{in}*\frac{R}{1+\frac{1}{j\omega C}}=V_{in}*\frac{j\omega RC}{1+j\omega RC}$
+### Final Transfer Function
+$H(j\omega)=\frac{V_{out}}{V_{in}}=\frac{j\omega RC}{1+j\omega RC}\implies H(j\omega)=\frac{j\omega RC}{1+j\omega RC}=H(j\omega)=\frac{j\omega \tau}{1+j\omega \tau}$
+
 $\tau=RC$
-**Final function**
-$$
-H(j\omega)=\frac{j\omega \tau}{1+j\omega \tau}
-$$
