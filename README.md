@@ -1,3 +1,15 @@
+```mermaid
+graph TD
+    A[Input Signal]
+    A --> B[Highpass Filter, 2Hz]
+    B --> C[Highpass Filtered Gain Stage, 10Hz, 20dB]
+    C --> D[4th Order Lowpass Filter, 125Hz, -20dB]
+    D --> E[Highpass Filtered Gain Stage, 7,5kHz, 8dB]
+    E --> F[Lowpass Filter, 22kHz]
+    F --> G[Gain stage 40dB]
+    G --> H[Power Stage]
+    H --> J[Output Signal]
+```
 ## Highpass Filter
 
 ### Calculating Values
@@ -86,3 +98,13 @@ H(j\omega) = \frac{V_{out}}{V_{in}} = \frac{j\omega RC}{1 + j\omega RC} = \frac{
 $$
 
 Where $\tau = RC$.
+
+### Second order filter
+
+Since this circuit is using the same values as the filter discussed earlier it is equivalent to having two first order filters back to back. Because of this the Transfer Function can be multiplied by 2.
+
+### Second order Transfer Function
+
+$$
+H(j\omega)=2*\frac{j\omega \tau}{1+j\omega \tau}=\frac{2j\omega \tau}{1+j\omega \tau}
+$$
